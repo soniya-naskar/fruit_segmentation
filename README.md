@@ -74,14 +74,15 @@ How to Use
     name="yolov8_fruit_detector_3",
     val=True)
        ```
+   ***For better result epochs=50 and imgsz=640 can be taken, I was having some issue in my system ,the kernel was dying automatically while training the model with the same epochs and imgsz so I have reduced both the parameter.***
 
-6. Loaded the trained data and evaluated validation data:
+7. Loaded the trained data and evaluated validation data:
    - After training:
        ```python
       model = YOLO("fruit_detection_1/yolov8_fruit_detector_3/weights/best.pt")
       results = model("fruit_dataset/test/images/043_jpg.rf.fa255d6b50bbd925aa2ae76c33c530b0.jpg", save=True)
        ```
-7. Evaluated the metrics(precision,recall,f1 score):
+8. Evaluated the metrics(precision,recall,f1 score):
      # Segmentation metrics
      print(f"Segmentation mAP@0.5: {metrics.seg.map50:.4f}")
      print(f"Segmentation mAP@0.5:0.95: {metrics.seg.map:.4f}")
